@@ -40,3 +40,26 @@ IdentityServerDataProtectionDb
 
 ![image](https://user-images.githubusercontent.com/6674269/116256020-b598e400-a76a-11eb-8d66-7798441fc79f.png)
 
+4. Add connection strings:
+
+
+
+```
+  "ConnectionStrings": {
+    "ConfigurationDbConnection": "Server=xxxxxx;Database=IdentityServerConfigurationDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "PersistedGrantDbConnection": "Server=xxxxxx;Database=IdentityServerPersistedGrantDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "IdentityDbConnection": "Server=xxxxxx;Database=AdminIdentityDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "AdminLogDbConnection": "Server=xxxxxx;Database=AdminLogDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "AdminAuditLogDbConnection": "Server=xxxxxx;Database=AdminAuditLogDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "DataProtectionDbConnection": "Server=xxxxxx;Database=IdentityServerDataProtectionDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+
+
+```
+
+5. Run seed for migration and admin user:
+
+```
+dotnet run /seed
+
+```
