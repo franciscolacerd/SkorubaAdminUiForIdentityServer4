@@ -40,7 +40,7 @@ IdentityServerDataProtectionDb
 
 ![image](https://user-images.githubusercontent.com/6674269/116256020-b598e400-a76a-11eb-8d66-7798441fc79f.png)
 
-4. Add connection strings:
+4. Add connection strings in appsettings.json:
 
 
 
@@ -57,7 +57,25 @@ IdentityServerDataProtectionDb
 
 ```
 
-5. Change identityserverdata.json information :
+5. Add log connection string at serilog.json:
+
+
+```
+            {
+                "Name": "MSSqlServer",
+              "Args": {
+                "connectionString": "Server=ADAR;Database=AdminLogDb;User ID=VaspIdentityServer2021;password=aeJxbP5qCkCV67wZ39AFqXGeHNzgNK;Trusted_Connection=True;MultipleActiveResultSets=true",
+                "tableName": "Log",
+                "columnOptionsSection": {
+                  "addStandardColumns": [ "LogEvent" ],
+                  "removeStandardColumns": [ "Properties" ]
+                }
+              }
+            }
+
+```
+
+6. Change identityserverdata.json information :
 
 ```
 {
@@ -196,12 +214,12 @@ IdentityServerDataProtectionDb
 }
 ```
 
-6. Right mouse on solution and choose Multiple Startup Projects:
+7. Right mouse on solution and choose Multiple Startup Projects:
 
 ![image](https://user-images.githubusercontent.com/6674269/116260594-b92e6a00-a76e-11eb-876d-e67aae7ddbe5.png)
 
 
-7. Run seed for migration and admin user:
+8. Run seed for migration and admin user:
 
 ```
 dotnet run /seed
