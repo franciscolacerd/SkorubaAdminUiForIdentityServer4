@@ -24,12 +24,12 @@ dotnet new skoruba.is4admin --name MyProject --title MyProject --adminemail "adm
 3. Create 6 database for app suport and identity server suport:
 
 
-AdminIdentityDb
-IdentityServerConfigurationDb
-IdentityServerPersistedGrantDb
-AdminLogDb
-AdminAuditLogDb
-IdentityServerDataProtectionDb
++AdminIdentityDb
++IdentityServerConfigurationDb
++IdentityServerPersistedGrantDb
++AdminLogDb
++AdminAuditLogDb
++IdentityServerDataProtectionDb
 
 
 
