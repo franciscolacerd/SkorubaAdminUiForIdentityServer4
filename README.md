@@ -57,7 +57,146 @@ IdentityServerDataProtectionDb
 
 ```
 
-5. Run seed for migration and admin user:
+5. Change identityserverdata.json information :
+
+```
+{
+    "IdentityServerData": {
+        "IdentityResources": [
+            {
+                "Name": "roles",
+                "Enabled": true,
+                "DisplayName": "Roles",
+                "UserClaims": [
+                    "role"
+                ]
+            },
+            {
+                "Name": "openid",
+                "Enabled": true,
+                "Required": true,
+                "DisplayName": "Your user identifier",
+                "UserClaims": [
+                    "sub"
+                ]
+            },
+            {
+                "Name": "profile",
+                "Enabled": true,
+                "DisplayName": "User profile",
+                "Description": "Your user profile information (first name, last name, etc.)",
+                "Emphasize": true,
+                "UserClaims": [
+                    "name",
+                    "family_name",
+                    "given_name",
+                    "middle_name",
+                    "nickname",
+                    "preferred_username",
+                    "profile",
+                    "picture",
+                    "website",
+                    "gender",
+                    "birthdate",
+                    "zoneinfo",
+                    "locale",
+                    "updated_at"
+                ]
+            },
+            {
+                "Name": "email",
+                "Enabled": true,
+                "DisplayName": "Your email address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "email",
+                    "email_verified"
+                ]
+            },
+            {
+                "Name": "address",
+                "Enabled": true,
+                "DisplayName": "Your address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "address"
+                ]
+            }
+        ],
+        "ApiScopes": [
+            {
+                "Name": "flacerda_api",
+                "DisplayName": "flacerda_api",
+                "Required": true,
+                "UserClaims": [
+                    "role",
+                    "name"
+                ]
+            }
+        ],
+        "ApiResources": [
+            {
+                "Name": "flacerda_api",
+                "Scopes": [
+                    "flacerda_api"
+                ]
+            }
+        ],
+        "Clients": [
+            {
+                "ClientId": "flacerda",
+                "ClientName": "flacerda",
+                "ClientUri": "https://localhost:44303",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequirePkce": true,
+                "ClientSecrets": [
+                    {
+                        "Value": "3ba57ce1-6a5d-4ca6-aa95-2aacb68ebe13"
+                    }
+                ],
+                "RedirectUris": [
+                    "https://localhost:44303/signin-oidc"
+                ],
+                "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
+                "PostLogoutRedirectUris": [
+                    "https://localhost:44303/signout-callback-oidc"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:44303"
+                ],
+                "AllowedScopes": [
+                    "openid",
+                    "email",
+                    "profile",
+                    "roles"
+                ]
+            },
+            {
+                "ClientId": "flacerda_api_swaggerui",
+                "ClientName": "flacerda_api_swaggerui",
+                "AllowedGrantTypes": [
+                    "authorization_code"
+                ],
+                "RequireClientSecret": false,
+                "RequirePkce": true,
+                "RedirectUris": [
+                    "https://localhost:44302/swagger/oauth2-redirect.html"
+                ],
+                "AllowedScopes": [
+                    "flacerda_api"
+                ],
+                "AllowedCorsOrigins": [
+                    "https://localhost:44302"
+                ]
+            }
+        ]
+    }
+}
+```
+
+6. Run seed for migration and admin user:
 
 ```
 dotnet run /seed
