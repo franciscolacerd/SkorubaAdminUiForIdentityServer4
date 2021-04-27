@@ -64,7 +64,7 @@ IdentityServerDataProtectionDb
             {
                 "Name": "MSSqlServer",
               "Args": {
-                "connectionString": "Server=ADAR;Database=AdminLogDb;User ID=VaspIdentityServer2021;password=aeJxbP5qCkCV67wZ39AFqXGeHNzgNK;Trusted_Connection=True;MultipleActiveResultSets=true",
+                "connectionString": "Server=xxxxxx;Database=AdminLogDb;User ID=xxxxxx;password=xxxxxx;Trusted_Connection=True;MultipleActiveResultSets=true",
                 "tableName": "Log",
                 "columnOptionsSection": {
                   "addStandardColumns": [ "LogEvent" ],
