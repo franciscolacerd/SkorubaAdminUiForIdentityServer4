@@ -196,7 +196,12 @@ IdentityServerDataProtectionDb
 }
 ```
 
-6. Run seed for migration and admin user:
+6. Right mouse on solution and choose Multiple Startup Projects:
+
+![image](https://user-images.githubusercontent.com/6674269/116260594-b92e6a00-a76e-11eb-876d-e67aae7ddbe5.png)
+
+
+7. Run seed for migration and admin user:
 
 ```
 dotnet run /seed
