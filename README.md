@@ -225,3 +225,17 @@ IdentityServerDataProtectionDb
 dotnet run /seed
 
 ```
+
+9. After seed, set vars to false in appsettings.json:
+
+```
+  "SeedConfiguration": {
+    "ApplySeed": false
+  },
+  "DatabaseMigrationsConfiguration": {
+    "ApplyDatabaseMigrations": false
+  },
+  
+  ```
+
+
