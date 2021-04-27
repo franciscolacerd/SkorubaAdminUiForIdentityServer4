@@ -237,5 +237,14 @@ dotnet run /seed
   },
   
   ```
+  
+  10. Enter in portal with credentials and change then!
+
+ ```
+        "Username": "admin",
+        "Password": "Pa$$word123",
+ ```
+
+
 
 
