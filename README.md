@@ -1,4 +1,4 @@
-# SkorubaAdminUiForIdentityServer4
+# Skoruba AdminUi For Identity Server 4
 
 TOOLS - How to create a Skoruba Admin Ui for IdentityServer4
 
